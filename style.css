@@ -1,0 +1,259 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+body{
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  background-color: #f2f5fa;
+}
+.side-bar{
+  border: 1px solid black;
+  background-color: #363740;
+}
+.title{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title h3{
+  color: #FFFFFF;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+.menu{
+  height: 50px;
+  display: grid;
+  grid-template-columns: 65px 1fr 65px;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.icon-sec{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
+.name{
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.option-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.greetings{
+  padding: 10px;
+  margin-left: 50px;
+  width: 30px;
+  font-size: 20px;
+}
+.search{
+  position: relative;
+  margin-left: 700px;
+}
+.search input{
+  padding-left: 20px;
+  width: 180px;
+  height: 30px;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 50px;
+  padding-right: 30px;
+}
+.search i{
+  position: absolute;
+  top: 25%;
+  right: 14px;
+  font-size: 15px;
+  color: rgb(162, 162, 162);;
+}
+.profile{
+  border: 1px solid black;
+  margin-left: 80px;
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+}
+.stat{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sec{
+  width: 250px;
+  display: grid;
+  grid-template-columns: 1.7fr 2fr;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.info,
+.price{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 200;
+}
+.main-area{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+
+}
+.tools{
+  display: grid;
+  grid-template-columns: 119px 150px 1fr;
+}
+.filter-sec{
+  display: flex;
+  align-items: center;
+}
+.adduser-sec{
+  display: flex;
+  align-items: center;
+}
+.searchT{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.filter i{
+  padding-left: 13px;
+  padding-right: 5px;
+  color: rgb(107, 107, 107);
+}
+.filter{
+  border: 1px solid rgb(210, 210, 210);
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-user i{
+  padding-left: 13px;
+  padding-right: 5px;
+}
+.add-user{
+  padding-right: 15px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background-color: #2f35f3;
+  font-weight: 100;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.searchT input{
+  width: 300px;
+  height: 40px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 7px;
+  outline: none;
+  padding-left: 40px;
+}
+.searchT input::placeholder{
+  font-size: 16px;
+  color: rgb(208, 208, 208);
+}
+.search-group{
+  position: relative;
+}
+.fa-magnifying-glass{
+  position: absolute;
+  left: 15px;
+  top: 27%;
+  color: #363740;
+}
+.status-sec{
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+}
+.status-sec table{
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+.status-sec table tr:first-child th{
+  border-radius: 7px 7px 0 0;
+  background-color: #F9FAFB;
+}
+.status-sec table td{
+  background-color: #FFFFFF;
+}
+.status-sec table th{
+  height: 20px;
+  font-weight: 400;
+}
+.status-sec table th,
+.status-sec table td{
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+.status-sec table td{
+  font-weight: 300;
+}
+.table-profile{
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.status-sec table th:nth-child(1),
+.status-sec table td:nth-child(1){
+  width: 10px;
+}
+.status-sec table tr:last-child td{
+  border: none;
+  border-radius: 0 0 7px 7px;
+}
+.pay-status{
+  font-weight: 200;
+  color: green;
+}
+.unpaid-status{
+  font-weight: 200;
+  color: red;
+}
+.due-status{
+  font-weight: 200;
+  color: rgb(255, 145, 0);
+}
+.pay-alert-status{
+  font-weight: 200;
+  color: rgb(0, 140, 255);
+}
+
+
