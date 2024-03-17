@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+
+body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-container{
+  border: 1p solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f5fa;
+
+}
+.login-content{
+  height: 540px;
+  width: 450px;
+}
+.login-info{
+  margin-top: 55px;
+}
+.login-info input:nth-child(2),
+.login-info input:nth-child(4){
+  margin-bottom: 30px;
+  width: 97%;
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid rgb(168, 168, 168);
+}
+.login-info input:nth-child(4){
+  margin-bottom: 0;
+}
+.heading h2{
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.login-info label{
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+.forget{
+  display: flex;
+  justify-content: end;
+  margin-right: 10px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+.forget a{
+  text-decoration: none;
+  color: rgb(49, 49, 215);
+}
+.forget label{
+  cursor: pointer;
+}
+.remm{
+  display: flex;
+  align-items: center;
+}
+.remm input{
+  cursor: pointer;
+}
+.remm p{
+  margin-left: 5px;
+  display: inline;
+  font-size: 14px;
+}
+.submit{
+  width: 100%;
+  margin-top: 20px;
+  height: 30px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  background-color: #5349d6;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.alternate{
+  position: relative;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 12px;
+}
+.alternate::after,
+.alternate::before{
+  border-top: 1px solid rgb(198, 198, 198);
+  content: "";
+  display: inline-block;
+  width: 47%;
+  vertical-align: middle;
+  
+}
+.alternate::before{
+  margin-right: 5px;
+}
+.alternate::after{
+  margin-left: 5px;
+}
+.alternative-ways{
+  display: flex;
+  justify-content: space-between;
+}
+.alternative-ways button{
+  width: 45%;
+  height: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(174, 174, 174);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.alternative-ways i{
+  padding-right: 10px;
+  font-size: 20px;
+}
+.sign-up{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.sign-up a{
+  text-decoration: none;
+  color: rgb(49, 49, 215);
+}
+/* .image-container{
+  background-color: ;
+} */
+.image-container img{
+  width: 100%;
+  object-fit: contain;
+  height: 93vh;
+}

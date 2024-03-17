@@ -39,12 +39,14 @@ body{
   justify-content: center;
   font-weight: 200;
 }
-.name{
+.ame-s p{
   display: flex;
   align-items: center;
   font-weight: 100;
   font-size: 18px;
   letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 0 !important;
 }
 .option-menu{
   display: flex;
@@ -257,5 +259,8 @@ nav{
   font-weight: 200;
   color: rgb(0, 140, 255);
 }
-
+.data{
+  display: grid;
+  grid-template-rows: 0.5fr 2fr;
+}
 
