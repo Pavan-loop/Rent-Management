@@ -11,7 +11,32 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <title>Document</title>
+  <style>
+   .newtenants {
+    width: 400px;
+    margin-left: 80px;
+    border-collapse: separate; /* Separate borders */
+    border-spacing: 0 10px; /* Space between rows */
+  }
+
+  .newtenants th {
+    margin-top: 20px;
+  }
+
+  .newtenants button {
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: #2f35f3;
+    color: #FFFFFF;
+    border-radius: 10px;
+  }
+  </style>
 </head>
+<?php
+include 'db_connection.php';
+$conn = openCon();
+?>
 <body>
   <div class="side-bar">
     <div class="title">
@@ -91,7 +116,12 @@
 
       <div class="sec">
         <div class="graph">
-          7
+          <?php
+          $sql = "SELECT COUNT(name) AS count FROM tenants";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          echo $row['count'];
+          ?>
         </div>
         <div class="infor">
           <div class="info">
@@ -133,6 +163,9 @@
               Filters 
             </button>
           <ul class="dropdown-menu">
+            <?php
+            $sql = "SELECT "
+            ?>
             <li><a class="dropdown-item" href="#">PAID</a></li>
             <li><a class="dropdown-item" href="#">UNPAID</a></li>
             <li><a class="dropdown-item" href="#">DUE</a></li>
@@ -152,7 +185,33 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <table class="newtenants">
+
+                      <?php
+                      $sql = "SELECT * FROM newtenants";
+                      $result = $conn->query($sql);
+                      if($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                          echo "<tr>";
+                          echo "<th>" . $row['name'] . "</th>";
+                          echo "<form method=\"post\">";
+                          echo "<th><button name=\"add-btn\">ADD</button></th>";
+                          echo "</form>";
+                          echo "</tr>";
+                        }
+                      }else{
+                        echo "No Request Yet";
+                      }
+                      if(isset($_POST['add-btn'])){
+                        $sql = "INSERT INTO tenants (name, phone, property_no, status) SELECT name, phone_number, property, 'NEW' AS status FROM newtenants";
+                        $conn->query($sql);
+                        $delSQL = "DELETE FROM newtenants";
+                        $conn->query($delSQL);
+                        echo "<script>window.location.href = window.location.href</script>";
+                      }
+                      ?> 
+                      
+                  </table>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -196,35 +255,25 @@
             <th>Property No</th>
             <th>Pay Status</th>
           </tr>
+          <?php
+          $sql = "SELECT * FROM tenants";
+          $result = $conn->query($sql);
 
-          <tr>
-            <td><div class="table-profile"></div></td>
-            <td>Darshan</td>
-            <td>8050258773</td>
-            <td>#1238</td>
-            <td><span class="pay-status">PAID</span></td>
-          </tr>
-
-          <td><div class="table-profile"></div></td>
-          <td>Arya</td>
-          <td>78924567369</td>
-          <td>#1239</td>
-          <td><span class="unpaid-status">UNPAID</span></td>
-          </tr>
-
-          <td><div class="table-profile"></div></td>
-          <td>Abhishek</td>
-          <td>8618836350</td>
-          <td>#1240</td>
-          <td><span class="due-status">DUE</span></td>
-          </tr>
-
-          <td><div class="table-profile"></div></td>
-          <td>Gowtham</td>
-          <td>9467302986</td>
-          <td>#1241</td>
-          <td><span class="pay-alert-status">PAY ALERT</span></td>
-          </tr>
+          if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+              echo "<tr>";
+              echo "<td><div class=\"table-profile\"></div></td>";
+              echo "<td>" . $row['name'] . "</td>";
+              echo "<td>" . $row['phone'] . "</td>";
+              echo "<td>" . $row['property_no'] . "</td>";
+              echo "<td>" . $row['status'] . "</td>";
+              echo "</tr>";
+            }
+          }else{
+            echo "<tr><td colspan='3'> No Tenants Yet </td></tr>";
+          }
+          ?>
+          <!---- <td><span class="pay-status">PAID</span></td> --->
 
         </table>
       </div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">  
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto Flex";
+    }
+    nav{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+    section{
+      border: 1px solid rgb(217, 217, 217);
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.1);
+      padding-bottom: 20px;
+    }
+    .fcontainer{
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+    }
+    .fcontainer label{
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: #344054;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    .tenantName,
+    .phonenumber,
+    .propnum,
+    .caddress{
+      width: 320px;
+      padding: 10px 0 10px 10px;
+      border-radius: 10px;
+      border: 0.5px solid gray;
+    }
+    .sub-sec{
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+    .sub-sec button{
+      width: 310px;
+      height: 40px;
+      border-radius: 6px;
+      border: none;
+      background-color: #00308F;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h4>Request Property</h4>
+  </nav>
+  <section>
+    <div class="fcontainer">
+    <form action="insert.php" method="POST">
+
+      <label for="text">Name</label>
+      <input type="text" placeholder="Your Name" name="tenantName" class="tenantName">
+
+      <label for="text">Phone Number</label>
+      <input type="text" placeholder="Enter Your Phone Number" name="phonenumber" class="phonenumber">
+
+      <label for="text">Property</label>
+      <input type="text" placeholder="Enter the Property Number" name="propnum" class="propnum">
+
+      <label for="text">Current Address (Optional)</label>
+      <input type="text" placeholder="Enter your Current Address" name="caddress" class="caddress">
+
+      <div class="sub-sec">
+        <button type="submit">Send Request</button>
+      </div>
+    </form>
+    </div>
+  </section>
+</body>
+</html>

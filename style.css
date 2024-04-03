@@ -263,4 +263,15 @@ nav{
   display: grid;
   grid-template-rows: 0.5fr 2fr;
 }
-
+.newtenants{
+  width: 400px;
+  margin-left: 80px;
+}
+.newtenants button{
+  border: none;
+  width: 100px;
+  height: 40px;
+  background-color: #2f35f3;
+  color: #FFFFFF;
+  border-radius: 10px;
+}

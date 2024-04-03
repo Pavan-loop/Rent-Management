@@ -25,7 +25,8 @@ body{
   margin-top: 55px;
 }
 .login-info input:nth-child(2),
-.login-info input:nth-child(4){
+.login-info input:nth-child(4),
+.login-info input:nth-child(6){
   margin-bottom: 30px;
   width: 97%;
   height: 35px;
@@ -33,9 +34,6 @@ body{
   padding-left: 10px;
   outline: none;
   border: 1px solid rgb(168, 168, 168);
-}
-.login-info input:nth-child(4){
-  margin-bottom: 0;
 }
 .heading h2{
   font-weight: 500;
@@ -82,7 +80,7 @@ body{
   font-weight: 600;
   color: white;
   border: none;
-  background-color: black;
+  background-color: #5349d6;
   border-radius: 5px;
   cursor: pointer;
 }
